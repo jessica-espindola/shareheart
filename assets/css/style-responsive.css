@@ -1,0 +1,58 @@
+:root {
+    --fonte-primaria: 'Lilita One';
+    --fonte-secundaria: 'Josefin Slab';
+    --cor-primaria: rgb(32, 90, 183);
+    --cor-secundaria: #eaeaea;
+    --cor-terciaria: #fe3930;
+    --cor-branca: white;
+}
+@media screen and (max-width: 1023px) {
+    .menu-desktop {
+        display: none;
+    }
+    .menu-hamburguer-btn { 
+        display: flex;
+        color: var(--cor-branca);
+        padding-right: 20px;
+    }
+    .footer-content {
+        display: none;
+    }
+    .footer-mobile {
+        display: flex;
+    }
+}
+@media screen and (max-width: 940px) {
+    .secao_menu {
+        width: 85%;
+    }
+}
+@media screen and (max-width: 682px) {
+    .secao_menu_content {
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .secao_menu-titulo h3 {
+        font-size: 2em;
+    }
+    .secao_menu_content-left {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+    .secao_menu_content-right {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+}
+@media screen and (max-width: 560px) {
+    .secao_menu-titulo h3 {
+        font-size: 1.5em;
+    }
+    .secao_menu_content-left {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,160 @@
+* {
+    margin: 0px;
+}
+:root {
+    --fonte-primaria: 'Lilita One';
+    --fonte-secundaria: 'Josefin Slab';
+    --cor-secundaria: #eaeaea;
+    --cor-branca: white;
+    --cor-destaque: #FF985E;
+    --cor-verde: #92C2B2;
+    --cor-roxa: #3F314E;
+    --cor-rosa: #DF1C6A;
+    --cor-bege: #FEE9CB;
+}
+/*----------------------------------------------------------------- HEADER */
+.barra-menu-superior {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    
+}
+.barra-menu-superior {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Define a ordem de empilhamento */
+        background-color: var(--cor-roxa);
+        padding-bottom: 10px;
+}
+.barra-menu-superior a, .logo a, .menu-desktop a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+.logo a{
+    font-family: var(--fonte-primaria);
+    font-weight: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+.menu-hamburguer-btn {
+    display: none;
+}
+.menu-hamburguer {
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    position:fixed;
+    z-index: 1001;
+    top: 0px;
+    right: 0px;
+    width: 20em;
+    height: 100%;
+
+}
+.close-menu-hamburguer-btn {
+    padding-top: 10px;
+}
+.conteudo-menu-hamburguer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    top: 0px;
+    right: 0px;
+    padding-top: 30px;
+    background-color: rgba(39, 38, 38, 0.859);
+    z-index: 1001;
+    width: 20em;
+    height: 100%;
+}
+.conteudo-menu-hamburguer a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--cor-branca);
+    font-family: var(--fonte-secundaria);
+    font-weight: 500;
+    margin: 0px 20px;
+    padding: 20px 0px 0px 0px;
+    border-top: 2px solid rgb(233, 230, 230);
+}
+.conteudo-menu-hamburguer h3 {
+    margin: 0px 20px;
+    text-transform: uppercase;
+    color: var(--cor-branca);
+    font-family: var(--fonte-primaria);
+    font-weight: 300;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sombreamento semi-transparente */
+    z-index: 1000; /* Z-index menor que o do menu hambúrguer */
+    opacity: 0; /* Inicialmente transparente */
+    visibility: hidden; /* Inicialmente invisível */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.close-menu-hamburguer-btn {
+    color: var(--cor-branca);
+}
+.menu-desktop {
+    display: flex;
+    gap: 30px;
+    font-family: var(--fonte-secundaria);
+    font-weight: 700;
+    margin-right: 50px;
+}
+
+.menu-desktop a:hover {
+    border-top: 2px solid var(--cor-destaque);
+    color:var(--cor-destaque);
+    padding-top: 10px;
+}
+
+/*----------------------------------------------------------------- FOOTER */
+.footer-mobile {
+    background-color: var(--cor-secundaria);
+    padding: 4px 0px;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    display: none;
+    justify-content: space-evenly;
+
+}
+.footer-mobile-botao {
+    padding: 10px;
+    border-radius: 100%;
+    color: var(--cor-roxa);
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.footer-content-texto {
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    padding-top: 15px;
+}
+.footer-content li {
+    list-style: none;
+}
+.github-logo {
+    width: 4em;
+}
+
