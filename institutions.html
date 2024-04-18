@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="App para doações beneficentes, passando adiante o amor e caridade." />
+    <meta name="theme-color" content="#d36f0b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="PWA Teste" />
+    <meta name="msapplication-TileImage" content="./AppIcons/144.png" />
+    <meta name="msapplication-TileColor" content="#d36f0b" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Lilita+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style-header-footer.css">
+    <link rel="stylesheet" href="assets/css/style-responsive.css">
+    <link rel="stylesheet" href="assets/css/style-institutions.css">
+
+    <title>Share Heart</title>
+</head>
+<body>
+    <header>
+        <div class="barra-menu-superior">
+            <section class="logo">
+                <a href="index.html"><img  class="logo-img" src="assets/images/shareHeartLogo-simbolo.png" alt="Logo do Aplicativo Share Heart">
+                <h1 class="barra_titulo-titulo">Share Heart</h1></a>
+            </section>
+            <section class="menu-desktop">
+                <a href="index.html">Página Inicial</a>
+                <a href="#">Instituições</a>
+                <a href="#">Campanhas</a>
+                <a href="#">Sobre Nós</a>
+                <a href="#">Contato</a>
+            </section>
+            <span class="material-symbols-outlined menu-hamburguer-btn">menu</span>
+        </div>
+    </header>
+    <main class="main_content">
+        <div class="titulo_instituicoes">
+            <h3>Conheça abaixo algumas Instituições cadastradas para receberem doações.</h3>
+        </div>
+        <div class="list_content">
+            <ul id="list_places"></ul>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-mobile">
+            <a href="#"><span class="material-symbols-outlined footer-mobile-botao">home_pin</span></a>
+            <a href="index.html"><span class="material-symbols-outlined footer-mobile-botao">home</span></a>
+            <a href="#"><span class="material-symbols-outlined footer-mobile-botao">settings_applications</span></a>
+        </div>
+        <div class="footer-content">
+            <section class="footer-content-texto">
+                <p>Desenvolvido por Alunos do 3º Período</p>
+                <p>Curso de Análise e Desenvolvimento de Sistemas</p>
+                <p>Faculdade SENAC - PE</p>
+            </section>
+            <li><a href="https://github.com/guilherme-pg/shareheart.git"><img class="github-logo" src="assets/images/GitHub_Logo.png" alt=""></a></li>
+        </div>
+    </footer>
+
+    <script src="assets/js/listinstitutions.js"></script>
+    <script src="assets/js/standard.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script>
+        let newWorker;
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("./service-worker.js").then((reg) => {
+            reg.addEventListener("updatefound", () => {
+              newWorker = reg.installing;
+            });
+          });
+          let refreshing;
+          navigator.serviceWorker.addEventListener(
+            "controllerchange",
+            function () {
+              if (refreshing) return;
+              window.location.reload();
+              refreshing = true;
+            }
+          );
+        }
+      </script>
+</body>
+</html>
